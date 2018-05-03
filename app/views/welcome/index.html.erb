@@ -1,2 +1,115 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+<nav class="navbar navbar-inverse">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">OnlineShopping</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in">
+        	
+        <!-- </span> Login -->
+        	<% if user_signed_in? %>
+              <li><%= link_to "logout", destroy_user_session_path,method: "delete"  %></li>
+              <li> <%= link_to "Hi #{current_user.email[/[^@]+/]}" , '#' %></li>
+            <% else %>
+              <li><%= link_to "login", new_user_session_path %></li>
+            <% end %>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container text-center">
+<div class="jumbotron">
+    <h1>Fitness Band Trackers</h1>      
+    
+  </div>
+</div>
+  
+<div class="container bg-3 text-center">    
+						<br>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Armour</p>
+      <%= image_tag("armour.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "armour") %>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Fitbit</p>
+     <%= image_tag("fitbit.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "fitbit") %>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Redmi</p>
+      <%= image_tag("redmi.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "redmi") %>
+      </div>
+    <div class="col-sm-3">
+      <p>Gofit</p>
+      <%= image_tag("gofit.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "gofit") %>
+    </div>
+  </div>
+</div><br>
+
+<div class="container bg-3 text-center">    
+  <div class="row">
+    <div class="col-sm-3">
+      <p>Ipm</p>
+      <%= image_tag("ipm.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "ipm") %>
+    </div>
+    <div class="col-sm-3"> 
+      <p>vivofit</p>
+     <%= image_tag("vivofit.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "vivofit") %>
+    </div>
+    <div class="col-sm-3"> 
+      <p>Iwovin</p>
+      <%= image_tag("iwovin.jpeg",  class:"img-responsive",style:"width:100%" ,:alt => "iwovin") %>
+      </div>
+    <div class="col-sm-3">
+      <p>Wesco</p>
+      <%= image_tag("wesco.jpg",  class:"img-responsive",style:"width:100%" ,:alt => "wesco") %>
+    </div>
+  </div>
+</div><br><br>
+
+<footer class="container text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
