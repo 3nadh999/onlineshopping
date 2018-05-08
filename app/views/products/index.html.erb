@@ -1,0 +1,28 @@
+
+
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th>price</th>
+		<th>manufacture</th>
+		<th>Actions</th>
+	</tr>
+	<% @product.each do |p| %>
+	<tr>
+		<td><%= p.name %></td>
+		<td><%= p.price %></td>
+		<td><%= p.manufature %></td>
+		
+		<td>
+			<%= link_to "Show", product_path(p) %>
+			
+		</td>
+	</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to "New product", new_product_path %>
+</p>
+
+
