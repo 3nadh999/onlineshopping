@@ -4,7 +4,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-  	@product = Product.new(product_params)
+   
+    @product = Product.new(product_params)
     if @product.save
     	redirect_to products_path
     end
@@ -15,6 +16,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    
+    @product = Product.find(params[:id])
 
   end
 
