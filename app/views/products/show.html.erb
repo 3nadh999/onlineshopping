@@ -1,0 +1,26 @@
+
+<div class="row">
+	<div class="column">
+		<% if @product.avatar.blank?%>
+			
+			 <%= image_tag("/missing_avatar.png",  class:"img-responsive",style:"width:70%" ,:alt => "Image Missing") %>
+		<% else %>
+
+				 <%= image_tag("#{@product.avatar}",  class:"img-responsive",style:"width:100%" ,:alt => "Image Missing") %>
+		<% end %>	
+	</div>
+
+	<div class="column">
+	
+	
+	
+		<h1>Name        : <%= @product.name %></h1><br>
+		<h1>Price       : <%= @product.price %></h1><br>
+		<h1>Manufacture : <%= @product.manufature %></h1><br>
+
+	
+		<%= link_to "Back", products_path(p) %>
+			
+		
+	</div>
+</div>	

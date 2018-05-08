@@ -1,0 +1,7 @@
+<%= form_for @product do |f| %>
+	<p>Name : <%= f.text_field :name %></p>
+	<p>Price : <%= f.number_field :price %></p>
+	<p>Manufature Date: <%= f.date_field :manufature %></p>
+	<p><%= f.file_field :avatar %></p>
+	<p><%= f.submit %></p>
+<% end %>

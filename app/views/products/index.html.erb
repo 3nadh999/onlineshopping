@@ -1,0 +1,39 @@
+
+
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th>price</th>
+		<th>manufacture</th>
+		<th>avatar</th>
+		<th>image</th>
+		<th>Actions</th>
+	</tr>
+	<% @product.each do |p| %>
+	<tr>
+		<td><%= p.name %></td>
+		<td><%= p.price %></td>
+		<td><%= p.manufature %></td>
+		<td><%= p.avatar %></td>
+		<% if p.avatar.blank?%>
+			
+			<td> <%= image_tag("/missing_avatar.png",  class:"img-responsive",style:"width:70%" ,:alt => "Image Missing") %></td>
+			<% else %>
+
+				<td> <%= image_tag("#{p.avatar}",  class:"img-responsive",style:"width:100%" ,:alt => "Image Missing") %></td>
+		<% end %>	
+
+
+		<td>
+			<%= link_to "Show", product_path(p) %>
+			
+		</td>
+	</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to "New product", new_product_path %>
+</p>
+
+
