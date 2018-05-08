@@ -9,6 +9,22 @@
   </div>
 
   <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :City %><br />
+    <%= f.text_field :City, autofocus: true, autocomplete: "City" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_area :Address, autofocus: true, autocomplete: "Address" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
